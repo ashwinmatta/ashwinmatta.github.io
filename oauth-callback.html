@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tesla OAuth callback</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 3rem auto; padding: 0 1rem; }
+    code { word-break: break-all; }
+  </style>
+</head>
+<body>
+  <h1>Tesla OAuth callback</h1>
+  <p>If Tesla redirected here after sign-in, the authorization code is below. Copy it for Pointy. Do not share this page’s URL while a code is in it.</p>
+  <p><strong>Query:</strong> <code id="q"></code></p>
+  <p><strong>Code:</strong> <code id="c"></code></p>
+  <script>
+    const p = new URLSearchParams(location.search);
+    document.getElementById('q').textContent = location.search || '(none)';
+    document.getElementById('c').textContent = p.get('code') || '(none)';
+  </script>
+</body>
+</html>
